@@ -1,0 +1,5 @@
+*.sqlite3
+*.pyc
+/simple_blog/manual_settings.py
+
+__pycache__
