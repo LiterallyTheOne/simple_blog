@@ -1,0 +1,53 @@
+<div class="card mb-3 mt-3">
+    <div class="row my-2 g-1 justify-content-center align-items-center">
+
+        <div class="col-auto m-1">
+            <img src="{{post.img.url}}" class="img-fluid rounded"
+                 alt="test_image" width="240" height="135">
+        </div>
+
+
+        <div class="col-6 card-body d-flex flex-column">
+
+
+            <h3 class="card-text">
+                {{post.title}}
+            </h3>
+
+            <div class="text-muted">
+                <time datetime="{{post.publish_date|date:'Y-n-d'}}">
+                    <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
+                          data-bs-trigger="hover focus" data-bs-content="{{post.publish_date|date:'H:i e'}}">
+                                Publish date: {{post.publish_date|date:'Y-n-d'}}
+                    </span>
+                </time>
+            </div>
+
+            <div class="text-black-50">
+                <time datetime="{{post.edit_date|date:'Y-n-d'}}">
+                     <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
+                           data-bs-trigger="hover focus" data-bs-content="{{post.edit_date|date:'H:i e'}}">
+                                Edit date: {{post.edit_date|date:'Y-n-d'}}
+                     </span>
+                </time>
+            </div>
+
+
+            <ul class="list-unstyled d-flex flex-wrap mt-1">
+
+                {% if post.tags.all %}
+
+                {% for tag in post.tags.all %}
+                {% include "main_blog/tag_main.html" with tag=tag%}
+                {% endfor %}
+
+                {% endif %}
+
+            </ul>
+
+            <a class="align-self-end mt-2" href="/post/{{post.id}}">go to post</a>
+
+        </div>
+
+    </div>
+</div>

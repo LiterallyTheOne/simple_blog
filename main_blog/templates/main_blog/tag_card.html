@@ -1,0 +1,27 @@
+<div class="card mb-3 mt-3">
+    <div class="row my-2 g-1 justify-content-center align-items-center">
+
+        <div class="col-auto m-1">
+            <img src="{{tag.img.url}}" class="img-fluid rounded"
+                 alt="test_image" width="240" height="135">
+        </div>
+
+
+        <div class="col-6 card-body d-flex flex-column">
+
+            <div class="card-text">
+                {% autoescape off %}
+                {{tag.description}}
+                {% endautoescape %}
+            </div>
+            {# <!-- TODO writing testcase --> #}
+            {% if tag.url %}
+            <a href="{{tag.url}}">
+                {{tag.url}}
+            </a>
+            {% endif %}
+
+        </div>
+
+    </div>
+</div>
