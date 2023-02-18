@@ -1,4 +1,4 @@
 Simple blog
 ===========
 
-A simple blog with some functionality.
+A simple blog with some functionalities.
