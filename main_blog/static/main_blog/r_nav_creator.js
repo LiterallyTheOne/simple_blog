@@ -58,7 +58,12 @@ if (hs.length > 0){
         }
         current_h = hs[i].tagName.slice(1);
 
-        var k1 = create_li_for_nav(hs[i].getAttribute('id'), hs[i].innerHTML, ['my-1', `ms-${current+2}`]);
+        hs_id = hs[i].getAttribute('id')
+        if(hs_id == null){
+            hs_id = hs[i].parentNode.id;
+        }
+
+        var k1 = create_li_for_nav(hs_id, hs[i].innerHTML, ['my-1', `ms-${current+2}`]);
 
         perv_k1 = k1;
 
