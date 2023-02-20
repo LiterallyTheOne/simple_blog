@@ -11,5 +11,6 @@ def rst_to_html(rst_text: str) -> str:
     result = result.replace('<cite>', '<code class="rounded p-1">')
     result = result.replace('</cite>', '</code>')
     # change pre to
-    result = re.sub(r'<pre class="literal-block">((.|\s)*?)(?=<\/pre>)', r'<pre><code>\1</code></pre', result)
+    result = re.sub(r'<pre class="literal-block">((.|\s)*?)(?=<\/pre>)', r'<pre><code>\1</code></pre>', result)
+    result = re.sub(r'<pre class="code literal-block">((.|\s)*?)(?=<\/pre>)', r'<pre><code>\1</code></pre>', result)
     return result
