@@ -2,6 +2,8 @@ from django.shortcuts import render
 
 from .models import Post, Tag
 
+from r_utils import rst_to_html
+
 page_divide = 10
 
 
@@ -33,6 +35,9 @@ def index(request):
 
 def post_view(request, post_id):
     post = Post.objects.get(id=post_id)
+
+    if post.description_format == 'rst':
+        post.description = rst_to_html(post.description)
 
     context = {
         'post': post,
