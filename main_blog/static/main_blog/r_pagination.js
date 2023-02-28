@@ -1,4 +1,3 @@
-
 function create_li_with_logo(page_value, inner_html, disabled, aria_label) {
     var li_1 = document.createElement('li');
 
@@ -48,7 +47,7 @@ function create_li_for_pagination(page_value, activate = false) {
 
 }
 
-function create_li_3_dots(){
+function create_li_3_dots() {
     var li_1 = document.createElement('li');
     li_1.setAttribute('class', 'page-item disabled');
 
@@ -57,11 +56,11 @@ function create_li_3_dots(){
     a_1.innerHTML = '...';
 
     li_1.appendChild(a_1);
-    
+
     return li_1;
 }
 
-if(number_of_pages > 0){
+if (number_of_pages > 0) {
 
     var r1 = document.getElementById('r_pagination');
 

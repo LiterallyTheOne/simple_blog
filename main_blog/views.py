@@ -10,7 +10,8 @@ page_divide = 10
 def index(request):
     count_of_posts = Post.objects.count()
 
-    number_of_pages = count_of_posts // page_divide + (count_of_posts % page_divide > 0) * 1
+    number_of_pages = count_of_posts // page_divide \
+        + (count_of_posts % page_divide > 0) * 1
 
     current_page = 0
     try:
@@ -50,7 +51,8 @@ def tag_view(request, tag_name):
 
     count_of_posts = tag.post_set.count()
 
-    number_of_pages = count_of_posts // page_divide + (count_of_posts % page_divide > 0) * 1
+    number_of_pages = count_of_posts // page_divide + \
+        (count_of_posts % page_divide > 0) * 1
 
     current_page = 0
     try:

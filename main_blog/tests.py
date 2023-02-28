@@ -17,8 +17,6 @@ class PostAndTagTestCase(TestCase):
         self.p1.tags.add(self.t1)
         self.p1.tags.add(self.t2)
 
-
-
     def test_tags_in_post(self):
         tags = self.p1.tags.all()
 

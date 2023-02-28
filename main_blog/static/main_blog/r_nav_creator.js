@@ -33,7 +33,7 @@ var post_description = document.getElementById('post-description');
 
 var hs = post_description.querySelectorAll("h2, h3, h4, h5, h6");
 
-if (hs.length > 0){
+if (hs.length > 0) {
     var current = 0;
     var current_h = hs[0].tagName.slice(1);
 
@@ -51,7 +51,7 @@ if (hs.length > 0){
 
         } else if (current_h > hs[i].tagName.slice(1)) {
             current -= parseInt(current_h) - parseInt(hs[i].tagName.slice(1));
-            for(var j=0; j < (parseInt(current_h) - parseInt(hs[i].tagName.slice(1))); j++){
+            for (var j = 0; j < (parseInt(current_h) - parseInt(hs[i].tagName.slice(1))); j++) {
                 add_to.pop();
             }
 
@@ -59,11 +59,11 @@ if (hs.length > 0){
         current_h = hs[i].tagName.slice(1);
 
         hs_id = hs[i].getAttribute('id')
-        if(hs_id == null){
+        if (hs_id == null) {
             hs_id = hs[i].parentNode.id;
         }
 
-        var k1 = create_li_for_nav(hs_id, hs[i].innerHTML, ['my-1', `ms-${current+2}`]);
+        var k1 = create_li_for_nav(hs_id, hs[i].innerHTML, ['my-1', `ms-${current + 2}`]);
 
         perv_k1 = k1;
 
