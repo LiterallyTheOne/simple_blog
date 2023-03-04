@@ -2,8 +2,7 @@
     <div class="row my-2 g-1 justify-content-center align-items-center">
 
         <div class="col-auto m-1">
-            <img src="{{post.img.url}}" class="img-fluid rounded"
-                 alt="test_image" width="240" height="135">
+            <img src="{{post.img.url}}" class="img-fluid rounded" alt="test_image" width="240" height="135">
         </div>
 
 
@@ -16,19 +15,19 @@
 
             <div class="text-muted">
                 <time datetime="{{post.publish_date|date:'Y-n-d'}}">
-                    <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
-                          data-bs-trigger="hover focus" data-bs-content="{{post.publish_date|date:'H:i e'}}">
-                                Publish date: {{post.publish_date|date:'Y-n-d'}}
+                    <span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus"
+                        data-bs-content="{{post.publish_date|date:'H:i e'}}">
+                        Publish date: {{post.publish_date|date:'Y-n-d'}}
                     </span>
                 </time>
             </div>
 
             <div class="text-black-50">
                 <time datetime="{{post.edit_date|date:'Y-n-d'}}">
-                     <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
-                           data-bs-trigger="hover focus" data-bs-content="{{post.edit_date|date:'H:i e'}}">
-                                Edit date: {{post.edit_date|date:'Y-n-d'}}
-                     </span>
+                    <span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus"
+                        data-bs-content="{{post.edit_date|date:'H:i e'}}">
+                        Edit date: {{post.edit_date|date:'Y-n-d'}}
+                    </span>
                 </time>
             </div>
 
