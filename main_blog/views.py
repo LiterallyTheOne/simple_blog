@@ -10,12 +10,13 @@ page_divide = 10
 def index(request):
     count_of_posts = Post.objects.count()
 
-    number_of_pages = count_of_posts // page_divide \
-        + (count_of_posts % page_divide > 0) * 1
+    number_of_pages = (
+        count_of_posts // page_divide + (count_of_posts % page_divide > 0) * 1
+    )
 
     current_page = 0
     try:
-        current_page = int(request.GET['page']) - 1
+        current_page = int(request.GET["page"]) - 1
     except KeyError:
         pass
 
@@ -26,24 +27,24 @@ def index(request):
     ten_most_used_tags = Tag.get_tags_order_by_more_posts()[:10]
 
     context = {
-        'posts': ten_latest_posts,
-        'number_of_pages': number_of_pages,
-        'current_page_start_from_1': current_page + 1,
-        'tags': ten_most_used_tags
+        "posts": ten_latest_posts,
+        "number_of_pages": number_of_pages,
+        "current_page_start_from_1": current_page + 1,
+        "tags": ten_most_used_tags,
     }
-    return render(request, 'main_blog/index.html', context)
+    return render(request, "main_blog/index.html", context)
 
 
 def post_view(request, post_id):
     post = Post.objects.get(id=post_id)
 
-    if post.description_format == 'rst':
+    if post.description_format == "rst":
         post.description = rst_to_html(post.description)
 
     context = {
-        'post': post,
+        "post": post,
     }
-    return render(request, 'main_blog/post_view.html', context)
+    return render(request, "main_blog/post_view.html", context)
 
 
 def tag_view(request, tag_name):
@@ -51,12 +52,13 @@ def tag_view(request, tag_name):
 
     count_of_posts = tag.post_set.count()
 
-    number_of_pages = count_of_posts // page_divide + \
-        (count_of_posts % page_divide > 0) * 1
+    number_of_pages = (
+        count_of_posts // page_divide + (count_of_posts % page_divide > 0) * 1
+    )
 
     current_page = 0
     try:
-        current_page = int(request.GET['page']) - 1
+        current_page = int(request.GET["page"]) - 1
     except KeyError:
         pass
 
@@ -66,9 +68,13 @@ def tag_view(request, tag_name):
     ten_latest_posts = tag.post_set.all()[start:end]
 
     context = {
-        'tag': tag,
-        'posts': ten_latest_posts,
-        'number_of_pages': number_of_pages,
-        'current_page_start_from_1': current_page + 1,
+        "tag": tag,
+        "posts": ten_latest_posts,
+        "number_of_pages": number_of_pages,
+        "current_page_start_from_1": current_page + 1,
     }
-    return render(request, 'main_blog/tag_view.html', context)
+    return render(request, "main_blog/tag_view.html", context)
+
+
+def resume(request):
+    return render(request, "main_blog/resume.html")
