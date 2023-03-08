@@ -35,5 +35,5 @@ usage
 
 Add Posts and Tags
 ------------------
-To add new posts or Tags you can
+To add new posts or tags you can
 connect with the superuser.
