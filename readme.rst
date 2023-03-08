@@ -33,7 +33,7 @@ usage
     python3 manage.py runserver
 
 
-Add Posts and tags
+Add Posts and Tags
 ------------------
 To add new posts or Tags you can
 connect with the superuser.
