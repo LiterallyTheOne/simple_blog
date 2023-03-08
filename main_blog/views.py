@@ -76,5 +76,5 @@ def tag_view(request, tag_name):
     return render(request, "main_blog/tag_view.html", context)
 
 
-def resume(request):
-    return render(request, "main_blog/resume.html")
+def about_me(request):
+    return render(request, "main_blog/about_me.html")
