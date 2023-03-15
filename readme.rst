@@ -45,7 +45,7 @@ Files that you have to change
 +===================================================+================================+
 | main_blog/templates/main_blog/about_me.html       | Put your own information there |
 +---------------------------------------------------+--------------------------------+
-| main_blog/templates/main_blog/index.html          | title and meta information     |
+| main_blog/templates/main_blog/index.html          | Title and meta information     |
 +---------------------------------------------------+--------------------------------+
 | main_blog/templates/main_blog/post_view.html      | Meta information               |
 +---------------------------------------------------+--------------------------------+
