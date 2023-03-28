@@ -66,3 +66,11 @@ Add Posts and Tags
 ------------------
 To add new posts or tags you can
 connect with the superuser.
+
+Works in progress
+-----------------
+
+* Complete Readme
+* Add support of md files for posts
+* Make the code more general
+* Add dark theme
