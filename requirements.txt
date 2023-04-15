@@ -2,3 +2,4 @@ django
 Pillow
 docutils
 mysqlclient
+markdown
