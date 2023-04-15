@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 from .models import Post, Tag
 
-from r_utils import rst_to_html
+from r_utils import rst_to_html, md_to_html
 
 page_divide = 10
 
@@ -11,7 +11,7 @@ def index(request):
     count_of_posts = Post.objects.count()
 
     number_of_pages = (
-        count_of_posts // page_divide + (count_of_posts % page_divide > 0) * 1
+            count_of_posts // page_divide + (count_of_posts % page_divide > 0) * 1
     )
 
     current_page = 0
@@ -40,6 +40,8 @@ def post_view(request, post_id):
 
     if post.description_format == "rst":
         post.description = rst_to_html(post.description)
+    elif post.description_format == 'md':
+        post.description = md_to_html(post.description)
 
     context = {
         "post": post,
@@ -53,7 +55,7 @@ def tag_view(request, tag_name):
     count_of_posts = tag.post_set.count()
 
     number_of_pages = (
-        count_of_posts // page_divide + (count_of_posts % page_divide > 0) * 1
+            count_of_posts // page_divide + (count_of_posts % page_divide > 0) * 1
     )
 
     current_page = 0

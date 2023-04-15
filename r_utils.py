@@ -1,4 +1,5 @@
 import docutils.core
+import markdown
 import re
 
 
@@ -19,6 +20,16 @@ def rst_to_html(rst_text: str) -> str:
                     r'<pre><code>\1</code></pre>', result)
 
     # A naive solution to fix the path problems
+    result = result.replace('src="media', 'src="/media')
+
+    return result
+
+
+def md_to_html(md_str: str) -> str:
+    result = markdown.markdown(md_str, extensions=['fenced_code'])
+
+    result = result.replace('<code>', '<code class="rounded p-1">')
+
     result = result.replace('src="media', 'src="/media')
 
     return result
