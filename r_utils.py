@@ -18,7 +18,7 @@ def rst_to_html(rst_text: str) -> str:
     result = re.sub(r'<pre class="code literal-block">((.|\s)*?)(?=<\/pre>)',
                     r'<pre><code>\1</code></pre>', result)
 
-    # A navie solution to fix the path problems
+    # A naive solution to fix the path problems
     result = result.replace('src="media', 'src="/media')
 
     return result
