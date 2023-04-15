@@ -20,7 +20,8 @@ class Post(models.Model):
     title = models.CharField(max_length=50)
     img = models.ImageField(upload_to='post_images', default=None)
     description = models.TextField(default='no description yet')
-    description_format = models.CharField(max_length=10, default='html')
+    description_format = models.CharField(max_length=10, default='html',
+                                          choices=[('html', 'html'), ('rst', 'rst'), ('md', 'md')])
     publish_date = models.DateTimeField(auto_now_add=True)
     edit_date = models.DateTimeField(auto_now=True)
 
