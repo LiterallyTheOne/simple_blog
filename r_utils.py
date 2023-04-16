@@ -26,9 +26,13 @@ def rst_to_html(rst_text: str) -> str:
 
 
 def md_to_html(md_str: str) -> str:
-    result = markdown.markdown(md_str, extensions=['fenced_code'])
+    result = markdown.markdown(md_str, extensions=['fenced_code', 'tables', 'toc'])
+
+    result = re.sub(r'<h1.*/h1>', r'', result)
 
     result = result.replace('<code>', '<code class="rounded p-1">')
+
+    result = result.replace('<table>', '<table class="table">')
 
     result = result.replace('src="media', 'src="/media')
 
