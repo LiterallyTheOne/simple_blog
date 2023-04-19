@@ -3,8 +3,10 @@ FROM python:3.11.3-bullseye
 WORKDIR /app
 
 COPY requirements.txt requirements.txt
+COPY optional-requirements.txt optional-requirements.txt
 
 RUN pip3 install -r requirements.txt
+RUN pip3 install -r optional-requirements.txt
 
 COPY . .
 
