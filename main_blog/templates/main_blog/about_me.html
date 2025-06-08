@@ -72,7 +72,18 @@
 
                     <div class="col-auto">
                         <div class="my-1 text-wrap text-break ">
-                            <p>Age: 27</p>
+                            <p>Age: <span id="age"></span>
+                            <script>
+                              // Set your birthdate here (YYYY, MM-1, DD)
+                              const birthDate = new Date(1996, 3, 12); // Example: May 15, 1996
+                              const today = new Date();
+                              let age = today.getFullYear() - birthDate.getFullYear();
+                              const m = today.getMonth() - birthDate.getMonth();
+                              if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                                age--;
+                              }
+                              document.getElementById('age').textContent = age;
+                            </script></p>
                             <p>Gender: Male</p>
 
                         </div>
