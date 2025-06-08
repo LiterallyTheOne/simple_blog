@@ -73,17 +73,18 @@
                     <div class="col-auto">
                         <div class="my-1 text-wrap text-break ">
                             <p>Age: <span id="age"></span>
-                            <script>
-                              // Set your birthdate here (YYYY, MM-1, DD)
-                              const birthDate = new Date(1996, 3, 12); // Example: May 15, 1996
-                              const today = new Date();
-                              let age = today.getFullYear() - birthDate.getFullYear();
-                              const m = today.getMonth() - birthDate.getMonth();
-                              if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-                                age--;
-                              }
-                              document.getElementById('age').textContent = age;
-                            </script></p>
+                                <script>
+                                    // Set your birthdate here (YYYY, MM-1, DD)
+                                    const birthDate = new Date(1996, 3, 12); // Example: May 15, 1996
+                                    const today = new Date();
+                                    let age = today.getFullYear() - birthDate.getFullYear();
+                                    const m = today.getMonth() - birthDate.getMonth();
+                                    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                                        age--;
+                                    }
+                                    document.getElementById('age').textContent = age;
+                                </script>
+                            </p>
                             <p>Gender: Male</p>
 
                         </div>
@@ -295,7 +296,7 @@
                         </h3>
 
                         <h4 class="text-muted">
-                            Python developer
+                            PhD Candidate in AI
                         </h4>
 
                     </div>
@@ -323,13 +324,13 @@
 
 
                         <p class="card-text align-self-start">
-                            Ramin Zarebidoky is a passionate programmer who likes to
-                            learn and code.
+                            Ramin Zarebidoky is a highly motivated computer engineer with over 10 years of experience in
+                            programming (Python and C++). He is currently a PhD candidate in AI at Yazd University.
+                            His main focus right now is on three topics: Computer vision, Generative AI (especially
+                            Large Language Models), and robotics. He is proven to be capable of teaching and providing
+                            practical solutions in industrial projects.
                         </p>
 
-                        <p class="card-text align-self-start">
-                            He is mostly interested in artificial intelligence, Linux and compilers.
-                        </p>
 
                     </div>
                 </div>
